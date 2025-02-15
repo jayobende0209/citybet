@@ -1,0 +1,530 @@
+body {
+  font-family: Sofia-Pro-Soft, sans-serif;
+  background: url('background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+body {
+  font-family: Sofia-Pro-Soft, sans-serif;
+  background: url('background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #228B22; /* Green color */
+  padding: 10px;
+  margin: 10px;
+  max-width: 100%;
+  font-size: 16;
+  margin: 0 auto;
+}
+
+.logo img {
+  width: 120px; /* Adjust the width as needed */
+  height: 30px; /* Maintain aspect ratio */
+}
+
+.navigation ul {
+  list-style: none;
+  display: flex;
+}
+
+.navigation ul li {
+  margin: 0 15px;
+}
+
+.navigation ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #228B22;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #147914;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+}
+
+/* Banner Carousel Styling */
+.banner-carousel {
+  position: relative;
+  max-width: 100%;
+  margin: 0px auto;
+  overflow: hidden;
+}
+
+.carousel-slide {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: auto;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.prev {
+  left: 30px;
+  margin-bottom: 50px ;
+}
+
+.next {
+  right: 30px;
+}
+
+/* Scrolling Text Styling */
+.scrolling-text {
+  background-color: #29282877;
+  color: #fff;
+  padding: 10px;
+  font-size: 18px;
+  white-space: nowrap;
+  overflow: hidden;
+  box-sizing: border-box;
+  margin: 0px 5px;
+}
+
+.scrolling-text span {
+  display: inline-block;
+  padding-left: 100%;
+  animation: scroll 10s linear infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Carousel Section */
+.carousel-section {
+  overflow-x: auto; /* Enable horizontal scrolling */
+  white-space: nowrap; /* Prevent wrapping of cards */
+  padding: 20px 20; /* Add vertical padding for spacing */
+  margin-bottom: 0px; /* Space between carousels */
+  scroll-snap-type: x mandatory; /* Enable snapping behavior */
+  margin: 17px;
+}
+.carousel-section {
+  overflow-x: hidden; /* Disable horizontal scrolling */
+  white-space: nowrap; /* Prevent wrapping of cards */
+  padding: 20px 20; /* Add vertical padding for spacing */
+  margin-bottom: 0px; /* Space between carousels */
+  scroll-snap-type: x mandatory; /* Enable snapping behavior */
+}
+
+.carousel-container {
+  display: inline-flex; /* Arrange cards horizontally */
+  gap: 20px; /* Add spacing between cards */
+}
+
+.match-card {
+  display: inline-block; /* Keep cards in line */
+  vertical-align: top; /* Align to top */
+  margin: 10 10px; /* Even spacing between cards */
+  scroll-snap-align: start; /* Snap alignment */
+}
+
+/* Ensure consistent spacing */
+.match-card:first-child {
+  margin-left: 20px; /* Consistent left margin for first card */
+}
+
+.match-card:last-child {
+  margin-right: 20px; /* Consistent right margin for last card */
+}
+
+/* Match Card Styling */
+.match-card {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  padding: 20px;
+  margin: 10px auto; /* Center the card horizontally */
+  width: 350px;
+  height: 350px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+}
+.team-info-container {
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.team-info {
+  display: flex;
+  align-items: center;
+}
+
+.team-logo {
+  width: 60px;
+  height: 80px;
+  margin-right: 80px; /* Increased margin to put a gap between the logos */
+  margin-left: 80px;
+}
+
+.team-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.vs-text {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.predictions-label {
+  font-size: 20px;
+  font-weight: regular;
+  margin-bottom: 10px;
+  color: #fff000;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.button-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.split-button-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game-on-label {
+  font-size: 14px;
+  font-weight: Bold;
+  margin-bottom: 5px;
+}
+
+.split-button {
+  display: flex;
+  gap: 2px;
+}
+
+.half-button {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 0px;
+  cursor: pointer;
+  background-color: #228B22; /* Green color */
+  color: #fff;
+  transition: background-color 0.3s ease;
+  width: 50px;
+  margin-right: 60px;
+  margin-bottom: 30px;
+}
+
+.half-button:hover {
+  background-color: #076807; /* Darker green on hover */
+}
+
+.left-button .half-button {
+  background-color: #228B22; /* Blue color */
+}
+
+.left-button .half-button:hover {
+  background-color: #076807; /* Darker blue on hover */
+}
+
+.right-button .half-button {
+  background-color: #228B22; /* Orange color */
+}
+
+.right-button .half-button:hover {
+  background-color: #0a700a; /* Darker orange on hover */
+}
+.team-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.team-logo {
+  width: 60px;
+  height: 80px;
+  margin-bottom: 5px;
+}
+
+.team-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+.half-button {
+  flex: 1;
+  padding: 15px; /* Increase padding to make buttons bigger */
+  font-size: 18px; /* Increase font size */
+  border: 1px;
+  border-color: #999e99;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #228B22; /* Green color */
+  color: #fff;
+  transition: background-color 0.3s ease;
+  box-shadow: #0a700a;
+  width: 80px; /* Increase width */
+  margin-right: 0px; /* Reduce gap between buttons */
+  margin-bottom: 5px; /* Close the gap between the buttons vertically */
+
+  margin-right: 0%; /* Reduce gap between buttons */
+}
+
+.split-button {
+  display: flex;
+  gap: px; /* Reduce gap between buttons */
+  justify-content: center; /* Center align buttons horizontally */
+  
+}
+.matchcard-carousel {
+  overflow: hidden; /* Hide the scrollbar */
+}
+.view-all-link {
+  float: right;
+}
+
+.view-all-link {
+  color: yellow;
+}
+.register-button {
+  background-color: green;
+  padding: 20px;
+  width: 100px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+}
+.banner-carousel {
+  position: relative;
+}
+
+.register-button {
+  position: absolute;
+  bottom: 70px; /* Moved up by 10px */
+  left: 60%;
+  transform: translateX(-50%);
+  background-color: green;
+  padding: 20px;
+  width: 300px;
+  color: white;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.register-button:hover {
+  background-color: rgb(6, 100, 3);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+}
+
+.scrolling-text {
+  margin-bottom: 0;
+}
+.live-result-view-all {
+  margin: 17px;
+}
+
+.view-all-link {
+  margin: 3px;
+}
+/* Registration page styles */
+
+css
+
+End of Selection
+.form-group input:focus {
+  border-color: #0a700a;
+  outline: none;
+}
+
+.submit-btn {
+  width: 300%;
+  padding: 10px;
+  background-color: #0a700a;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.card {
+  width: 400px;
+  background-color: rgba(255, 255, 255, 0.6); /* White background with 60% transparency */
+  border-radius: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.form-group {
+  margin-bottom: 25px; /* Increased space between form groups */
+  display: flex;
+  justify-content: center;
+}
+
+.form-group input {
+  width: 85%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 12px;
+  display: block;
+  margin: 10 auto;
+}
+.submit-btn {
+  width: 200px;
+  padding: 10px;
+  margin: 0px;
+  margin-left: 90px;
+  background-color: #0a700a;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #065e06;
+
+}
+
+.form-group-checkbox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+.form-group-checkbox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.form-group-checkbox input[type="checkbox"] {
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+}
+
+.form-group-checkbox label {
+  font-size: 10px;
+  color: #1a1919;
+}
+.card-footer {
+  margin-top: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #272727;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-footer span {
+  cursor: pointer;
+}
+
+.card-footer span:hover {
+  text-decoration: underline;
+}
+
+.card-header {
+  margin-bottom: 30px;
+}
+
+.card-header span {
+padding-bottom: 20px;
+  padding: 60px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #272727;
+  display: inline;
+}
+.form-group-checkbox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.confirmation-text {
+  text-align: center;
+  font-size: 14px;
+  color: black;
+  line-height: 1.5; /* Increased text height spacing */
+}
+.submit-btn {
+  display: block;
+  margin: 0 auto;
+}

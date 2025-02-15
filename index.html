@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+     .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #228B22; /* Green color */
+      padding: 10px 20px;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+
+    .logo a img {
+      width: 160px; /* Adjust the width as needed */
+      height: 50px; /* Maintain aspect ratio */
+    }
+
+    .navigation ul {
+      list-style: none;
+      display: flex;
+    }
+
+    .navigation ul li {
+      margin: 0 15px;
+    }
+
+    .navigation ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #228B22;
+      min-width: 200px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #147914;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+      background-color: #3e8e41;
+    }
+  </style>
+</head>
+<header class="header">
+  <div class="logo"><a href="index.html"><img src="logo.png" alt="Banner"></a></div>
+  <nav class="navigation">
+    <ul>
+      <li><a href="#">Leaderboard</a></li>
+      <li><a href="login.html">Enter to Predict</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropbtn">My Account</a>
+        <div class="dropdown-content">
+          <a href="#">Profile Details</a>
+          <a href="#">Deposit</a>
+          <a href="#">Withdrawal</a>
+          <a href="#">Bet History</a>
+          <a href="#">Logout</a>
+        </div>
+        </div>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <!-- Banner Section -->
+  <section class="banner-carousel">
+    <div class="carousel-slide">
+      <img src="banner1.jpg" alt="Banner 1">
+      <img src="banner2.jpg" alt="Banner 2">
+      <img src="banner3.jpg" alt="Banner 3">
+    </div>
+
+
+  </section>
+  <script>
+    const slides = document.querySelector('.carousel-slide');
+    const images = slides.querySelectorAll('img');
+    let currentIndex = 0;
+
+    function showNextSlide() {
+      currentIndex = (currentIndex + 1) % images.length;
+      slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    setInterval(showNextSlide, 4000); // Move every 4 seconds
+  const registerButton = document.createElement('a'); 
+  registerButton.textContent = 'Register';
+  registerButton.classList.add('register-button');
+  registerButton.href = 'registration.html';
+  registerButton.style.fontSize = '20px';
+  registerButton.style.fontWeight = 'bold'; // Increase font size for the register button
+  registerButton.style.textDecoration = 'none'; // Remove underline
+  document.querySelector('.banner-carousel').appendChild(registerButton);
+  </script>
+  <!-- Scrolling Text Section -->
+  <section class="scrolling-text" style="margin-bottom: 0;">
+    <marquee behavior="scroll" direction="left" scrollamount="5">
+      ARS 3:0 BOU • LIV 4:0 MAN • BHA 1:2 TOT • LIE 0:1 EVE • WOL 1:0 IPS • WHA 1:2 CHE • MCI 4:1 NFO • BRE 2:4 AST • 
+      ARS 3:0 BOU • LIV 4:0 MAN • BHA 1:2 TOT • LIE 0:1 EVE • WOL 1:0 IPS • WHA 1:2 CHE • MCI 4:1 NFO • BRE 2:4 AST •
+      ARS 3:0 BOU • LIV 4:0 MAN • BHA 1:2 TOT • LIE 0:1 EVE • WOL 1:0 IPS • WHA 1:2 CHE • MCI 4:1 NFO • BRE 2:4 AST •
+      ARS 3:0 BOU • LIV 4:0 MAN • BHA 1:2 TOT • LIE 0:1 EVE • WOL 1:0 IPS • WHA 1:2 CHE • MCI 4:1 NFO • BRE 2:4 AST
+    </marquee>
+  </section>
+  <section class="live-result-view-all">
+  <div class="live-results-header">
+    <span class="live-results-text">Live Results</span>
+    <a href="#" class="view-all-link">View All</a>
+</div>
+</section>
+</div>
+<section class="carousel-section">
+  <div class="carousel-container">
+    
+    <!-- Card 1: ARS vs BOU -->
+    <div class="match-card">
+      <div class="team-info-container">
+        <div class="team-info">
+          <img src="fulham.png" alt="BOU Logo" class="team-logo">
+          <span class="team-name">FUL</span>
+        </div>
+        <span class="vs-text">0:1</span>
+        <div class="team-info">
+          <img src="Crystal.png" alt="BOU Logo" class="team-logo">
+          <span class="team-name">CRY</span>
+        </div>
+      </div>
+      <div class="predictions-label">Prediction</div>
+      <div class="button-container">
+        <div class="button-row">
+          <div class="split-button-group">
+            <span class="game-on-label">Home/Away</span>
+            <div class="split-button left-button">
+              <button class="half-button left-half">1.50</button>
+              <button class="half-button right-half">1.75</button>
+            </div>
+          </div>
+          <div class="split-button-group">
+            <span class="game-on-label">H/A Draw</span>
+            <div class="split-button right-button">
+              <button class="half-button left-half">2.75</button>
+              <button class="half-button right-half">3.00</button>
+            </div>
+          </div>
+        </div>
+        <div class="button-row">
+          <div class="split-button-group">
+            <span class="game-on-label">O/U 2.5</span>
+            <div class="split-button left-button">
+              <button class="half-button left-half">3.00</button>
+              <button class="half-button right-half">3.25</button>
+            </div>
+          </div>
+          <div class="split-button-group">
+            <span class="game-on-label">Handicap +/-2</span>
+            <div class="split-button right-button">
+              <button class="half-button left-half">4.50</button>
+              <button class="half-button right-half">5.00</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="match-card">
+      <div class="team-info-container">
+        <div class="team-info">
+          <img src="Nottingham.png" alt="BOU Logo" class="team-logo">
+          <span class="team-name">NOT</span>
+        </div>
+        <span class="vs-text">0:1</span>
+        <div class="team-info">
+          <img src="Westham.png" alt="BOU Logo" class="team-logo">
+          <span class="team-name">WHA</span>
+        </div>
+      </div>
+      <div class="predictions-label">Prediction</div>
+      <div class="button-container">
+        <div class="button-row">
+          <div class="split-button-group">
+            <span class="game-on-label">Home/Away</span>
+            <div class="split-button left-button">
+              <button class="half-button left-half">1.50</button>
+              <button class="half-button right-half">1.75</button>
+            </div>
+          </div>
+          <div class="split-button-group">
+            <span class="game-on-label">H/A Draw</span>
+            <div class="split-button right-button">
+              <button class="half-button left-half">2.75</button>
+              <button class="half-button right-half">3.00</button>
+            </div>
+          </div>
+        </div>
+        <div class="button-row">
+          <div class="split-button-group">
+            <span class="game-on-label">O/U 2.5</span>
+            <div class="split-button left-button">
+              <button class="half-button left-half">3.00</button>
+              <button class="half-button right-half">3.25</button>
+            </div>
+          </div>
+          <div class="split-button-group">
+            <span class="game-on-label">Handicap +/-2</span>
+            <div class="split-button right-button">
+              <button class="half-button left-half">4.50</button>
+              <button class="half-button right-half">5.00</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<div class="match-card">
+      <div class="team-info-container">
+        <div class="team-info">
+          <img src="ipswich.png" alt="BOU Logo" class="team-logo">
+          <span class="team-name">IPS</span>
+        </div>
+        <span class="vs-text">1:3</span>
+        <div class="team-info">
+          <img src="Newcastle.png" alt="BOU Logo" class="team-logo">
+          <span class="team-name">NEW</span>
+        </div>
+      </div>
+      <div class="predictions-label">Prediction</div>
+      <div class="button-container">
+        <div class="button-row">
+          <div class="split-button-group">
+            <span class="game-on-label">Home/Away</span>
+            <div class="split-button left-button">
+              <button class="half-button left-half">1.50</button>
+              <button class="half-button right-half">1.75</button>
+            </div>
+          </div>
+          <div class="split-button-group">
+            <span class="game-on-label">H/A Draw</span>
+            <div class="split-button right-button">
+              <button class="half-button left-half">2.75</button>
+              <button class="half-button right-half">3.00</button>
+            </div>
+          </div>
+        </div>
+        <div class="button-row">
+          <div class="split-button-group">
+            <span class="game-on-label">O/U 2.5</span>
+            <div class="split-button left-button">
+              <button class="half-button left-half">3.00</button>
+              <button class="half-button right-half">3.25</button>
+            </div>
+          </div>
+          <div class="split-button-group">
+            <span class="game-on-label">Handicap +/-2</span>
+            <div class="split-button right-button">
+              <button class="half-button left-half">4.50</button>
+              <button class="half-button right-half">5.00</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Card 1: ARS vs BOU -->
+    <div class="match-card">
+      <div class="team-info-container">
+        <div class="team-info">
+          <img src="fulham.png" alt="BOU Logo" class="team-logo">
+          <span class="team-name">FUL</span>
+        </div>
+        <span class="vs-text">0:1</span>
+        <div class="team-info">
+          <img src="Crystal.png" alt="BOU Logo" class="team-logo">
+          <span class="team-name">CRY</span>
+        </div>
+      </div>
+      <div class="predictions-label">Prediction</div>
+      <div class="button-container">
+        <div class="button-row">
+          <div class="split-button-group">
+            <span class="game-on-label">Home/Away</span>
+            <div class="split-button left-button">
+              <button class="half-button left-half">1.50</button>
+              <button class="half-button right-half">1.75</button>
+            </div>
+          </div>
+          <div class="split-button-group">
+            <span class="game-on-label">H/A Draw</span>
+            <div class="split-button right-button">
+              <button class="half-button left-half">2.75</button>
+              <button class="half-button right-half">3.00</button>
+            </div>
+          </div>
+        </div>
+        <div class="button-row">
+          <div class="split-button-group">
+            <span class="game-on-label">O/U 2.5</span>
+            <div class="split-button left-button">
+              <button class="half-button left-half">3.00</button>
+              <button class="half-button right-half">3.25</button>
+            </div>
+          </div>
+          <div class="split-button-group">
+            <span class="game-on-label">Handicap +/-2</span>
+            <div class="split-button right-button">
+              <button class="half-button left-half">4.50</button>
+              <button class="half-button right-half">5.00</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="match-card">
+      <div class="team-info-container">
+        <div class="team-info">
+          <img src="Nottingham.png" alt="BOU Logo" class="team-logo">
+          <span class="team-name">NOT</span>
+        </div>
+        <span class="vs-text">0:1</span>
+        <div class="team-info">
+          <img src="Westham.png" alt="BOU Logo" class="team-logo">
+          <span class="team-name">WHA</span>
+        </div>
+      </div>
+      <div class="predictions-label">Prediction</div>
+      <div class="button-container">
+        <div class="button-row">
+          <div class="split-button-group">
+            <span class="game-on-label">Home/Away</span>
+            <div class="split-button left-button">
+              <button class="half-button left-half">1.50</button>
+              <button class="half-button right-half">1.75</button>
+            </div>
+          </div>
+          <div class="split-button-group">
+            <span class="game-on-label">H/A Draw</span>
+            <div class="split-button right-button">
+              <button class="half-button left-half">2.75</button>
+              <button class="half-button right-half">3.00</button>
+            </div>
+          </div>
+        </div>
+        <div class="button-row">
+          <div class="split-button-group">
+            <span class="game-on-label">O/U 2.5</span>
+            <div class="split-button left-button">
+              <button class="half-button left-half">3.00</button>
+              <button class="half-button right-half">3.25</button>
+            </div>
+          </div>
+          <div class="split-button-group">
+            <span class="game-on-label">Handicap +/-2</span>
+            <div class="split-button right-button">
+              <button class="half-button left-half">4.50</button>
+              <button class="half-button right-half">5.00</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<div class="match-card">
+      <div class="team-info-container">
+        <div class="team-info">
+          <img src="ipswich.png" alt="BOU Logo" class="team-logo">
+          <span class="team-name">IPS</span>
+        </div>
+        <span class="vs-text">1:3</span>
+        <div class="team-info">
+          <img src="Newcastle.png" alt="BOU Logo" class="team-logo">
+          <span class="team-name">NEW</span>
+        </div>
+      </div>
+      <div class="predictions-label">Prediction</div>
+      <div class="button-container">
+        <div class="button-row">
+          <div class="split-button-group">
+            <span class="game-on-label">Home/Away</span>
+            <div class="split-button left-button">
+              <button class="half-button left-half">1.50</button>
+              <button class="half-button right-half">1.75</button>
+            </div>
+          </div>
+          <div class="split-button-group">
+            <span class="game-on-label">H/A Draw</span>
+            <div class="split-button right-button">
+              <button class="half-button left-half">2.75</button>
+              <button class="half-button right-half">3.00</button>
+            </div>
+          </div>
+        </div>
+        <div class="button-row">
+          <div class="split-button-group">
+            <span class="game-on-label">O/U 2.5</span>
+            <div class="split-button left-button">
+              <button class="half-button left-half">3.00</button>
+              <button class="half-button right-half">3.25</button>
+            </div>
+          </div>
+          <div class="split-button-group">
+            <span class="game-on-label">Handicap +/-2</span>
+            <div class="split-button right-button">
+              <button class="half-button left-half">4.50</button>
+              <button class="half-button right-half">5.00</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Card 1: ARS vs BOU -->
+    <div class="match-card">
+      <div class="team-info-container">
+        <div class="team-info">
+          <img src="fulham.png" alt="BOU Logo" class="team-logo">
+          <span class="team-name">FUL</span>
+        </div>
+        <span class="vs-text">0:1</span>
+        <div class="team-info">
+          <img src="Crystal.png" alt="BOU Logo" class="team-logo">
+          <span class="team-name">CRY</span>
+        </div>
+      </div>
+      <div class="predictions-label">Prediction</div>
+      <div class="button-container">
+        <div class="button-row">
+          <div class="split-button-group">
+            <span class="game-on-label">Home/Away</span>
+            <div class="split-button left-button">
+              <button class="half-button left-half">1.50</button>
+              <button class="half-button right-half">1.75</button>
+            </div>
+          </div>
+          <div class="split-button-group">
+            <span class="game-on-label">H/A Draw</span>
+            <div class="split-button right-button">
+              <button class="half-button left-half">2.75</button>
+              <button class="half-button right-half">3.00</button>
+            </div>
+          </div>
+        </div>
+        <div class="button-row">
+          <div class="split-button-group">
+            <span class="game-on-label">O/U 2.5</span>
+            <div class="split-button left-button">
+              <button class="half-button left-half">3.00</button>
+              <button class="half-button right-half">3.25</button>
+            </div>
+          </div>
+          <div class="split-button-group">
+            <span class="game-on-label">Handicap +/-2</span>
+            <div class="split-button right-button">
+              <button class="half-button left-half">4.50</button>
+              <button class="half-button right-half">5.00</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="match-card">
+      <div class="team-info-container">
+        <div class="team-info">
+          <img src="Nottingham.png" alt="BOU Logo" class="team-logo">
+          <span class="team-name">NOT</span>
+        </div>
+        <span class="vs-text">0:1</span>
+        <div class="team-info">
+          <img src="Westham.png" alt="BOU Logo" class="team-logo">
+          <span class="team-name">WHA</span>
+        </div>
+      </div>
+      <div class="predictions-label">Prediction</div>
+      <div class="button-container">
+        <div class="button-row">
+          <div class="split-button-group">
+            <span class="game-on-label">Home/Away</span>
+            <div class="split-button left-button">
+              <button class="half-button left-half">1.50</button>
+              <button class="half-button right-half">1.75</button>
+            </div>
+          </div>
+          <div class="split-button-group">
+            <span class="game-on-label">H/A Draw</span>
+            <div class="split-button right-button">
+              <button class="half-button left-half">2.75</button>
+              <button class="half-button right-half">3.00</button>
+            </div>
+          </div>
+        </div>
+        <div class="button-row">
+          <div class="split-button-group">
+            <span class="game-on-label">O/U 2.5</span>
+            <div class="split-button left-button">
+              <button class="half-button left-half">3.00</button>
+              <button class="half-button right-half">3.25</button>
+            </div>
+          </div>
+          <div class="split-button-group">
+            <span class="game-on-label">Handicap +/-2</span>
+            <div class="split-button right-button">
+              <button class="half-button left-half">4.50</button>
+              <button class="half-button right-half">5.00</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<div class="match-card">
+      <div class="team-info-container">
+        <div class="team-info">
+          <img src="ipswich.png" alt="BOU Logo" class="team-logo">
+          <span class="team-name">IPS</span>
+        </div>
+        <span class="vs-text">1:3</span>
+        <div class="team-info">
+          <img src="Newcastle.png" alt="BOU Logo" class="team-logo">
+          <span class="team-name">NEW</span>
+        </div>
+      </div>
+      <div class="predictions-label">Prediction</div>
+      <div class="button-container">
+        <div class="button-row">
+          <div class="split-button-group">
+            <span class="game-on-label">Home/Away</span>
+            <div class="split-button left-button">
+              <button class="half-button left-half">1.50</button>
+              <button class="half-button right-half">1.75</button>
+            </div>
+          </div>
+          <div class="split-button-group">
+            <span class="game-on-label">H/A Draw</span>
+            <div class="split-button right-button">
+              <button class="half-button left-half">2.75</button>
+              <button class="half-button right-half">3.00</button>
+            </div>
+          </div>
+        </div>
+        <div class="button-row">
+          <div class="split-button-group">
+            <span class="game-on-label">O/U 2.5</span>
+            <div class="split-button left-button">
+              <button class="half-button left-half">3.00</button>
+              <button class="half-button right-half">3.25</button>
+            </div>
+          </div>
+          <div class="split-button-group">
+            <span class="game-on-label">Handicap +/-2</span>
+            <div class="split-button right-button">
+              <button class="half-button left-half">4.50</button>
+              <button class="half-button right-half">5.00</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Add more cards as needed --></section>
+<section class="live-result-view-all">
+  <div class="live-results-header">
+    <span class="live-results-text">Upcoming Results</span>
+    <a href="#" class="view-all-link">View All</a>
+     
+  </div>
+</section>
+<!-- Second Carousel -->
+<section class="carousel-section">
+  <div class="carousel-container">
+    <div class="upcoming-games-view-all">
+      <span class="upcoming-games">Upcoming Games</span>
+      <a href="#" class="view-all">View All</a>
+    </div>
+    <!-- Card 1: MANU vs LIV -->
+<div class="match-card">
+  <div class="team-info-container">
+    <div class="team-info">
+      <img src="manu.png" alt="MANU Logo" class="team-logo">
+      <span class="team-name">MUN</span>
+    </div>
+    <span class="vs-text">-:-</span>
+    <div class="team-info">
+      <img src="liverpool.png" alt="LIV Logo" class="team-logo">
+      <span class="team-name">LIV</span>
+    </div>
+  </div>
+  <div class="predictions-label">Prediction</div>
+  <div class="button-container">
+    <div class="button-row">
+      <div class="split-button-group">
+        <span class="game-on-label">Home/Away</span>
+        <div class="split-button left-button">
+          <button class="half-button left-half">1.60</button>
+          <button class="half-button right-half">1.80</button>
+        </div>
+      </div>
+      <div class="split-button-group">
+        <span class="game-on-label">Card O/U 2.5</span>
+        <div class="split-button right-button">
+          <button class="half-button left-half">2.80</button>
+          <button class="half-button right-half">3.10</button>
+        </div>
+      </div>
+    </div>
+    <div class="button-row">
+      <div class="split-button-group">
+        <span class="game-on-label">Conner O/U 2.5</span>
+        <div class="split-button left-button">
+          <button class="half-button left-half">3.10</button>
+          <button class="half-button right-half">3.30</button>
+        </div>
+      </div>
+      <div class="split-button-group">
+        <span class="game-on-label">GG/NG</span>
+        <div class="split-button right-button">
+          <button class="half-button left-half">4.60</button>
+          <button class="half-button right-half">5.10</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Card : MANU vs LIV -->
+<div class="match-card">
+  <div class="team-info-container">
+    <div class="team-info">
+      <img src="Manchester.png" alt="MANU Logo" class="team-logo">
+      <span class="team-name">MCI</span>
+    </div>
+    <span class="vs-text">-:-</span>
+    <div class="team-info">
+      <img src="Brentford.png" alt="LIV Logo" class="team-logo">
+      <span class="team-name">BRE</span>
+    </div>
+  </div>
+  <div class="predictions-label">Prediction</div>
+  <div class="button-container">
+    <div class="button-row">
+      <div class="split-button-group">
+        <span class="game-on-label">Home/Away</span>
+        <div class="split-button left-button">
+          <button class="half-button left-half">1.60</button>
+          <button class="half-button right-half">1.80</button>
+        </div>
+      </div>
+      <div class="split-button-group">
+        <span class="game-on-label">Card O/U 2.5</span>
+        <div class="split-button right-button">
+          <button class="half-button left-half">2.80</button>
+          <button class="half-button right-half">3.10</button>
+        </div>
+      </div>
+    </div>
+    <div class="button-row">
+      <div class="split-button-group">
+        <span class="game-on-label">Conner O/U 2.5</span>
+        <div class="split-button left-button">
+          <button class="half-button left-half">3.10</button>
+          <button class="half-button right-half">3.30</button>
+        </div>
+      </div>
+      <div class="split-button-group">
+        <span class="game-on-label">GG/NG</span>
+        <div class="split-button right-button">
+          <button class="half-button left-half">4.60</button>
+          <button class="half-button right-half">5.10</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Card 4: MANU vs LIV -->
+<div class="match-card">
+  <div class="team-info-container">
+    <div class="team-info">
+      <img src="Arsenal.png" alt="MANU Logo" class="team-logo">
+      <span class="team-name">ARS</span>
+    </div>
+    <span class="vs-text">-:-</span>
+    <div class="team-info">
+      <img src="Bournemouth.png" alt="LIV Logo" class="team-logo">
+      <span class="team-name">BOU</span>
+    </div>
+  </div>
+  <div class="predictions-label">Prediction</div>
+  <div class="button-container">
+    <div class="button-row">
+      <div class="split-button-group">
+        <span class="game-on-label">Home/Away</span>
+        <div class="split-button left-button">
+          <button class="half-button left-half">1.60</button>
+          <button class="half-button right-half">1.80</button>
+        </div>
+      </div>
+      <div class="split-button-group">
+        <span class="game-on-label">Card O/U 2.5</span>
+        <div class="split-button right-button">
+          <button class="half-button left-half">2.80</button>
+          <button class="half-button right-half">3.10</button>
+        </div>
+      </div>
+    </div>
+    <div class="button-row">
+      <div class="split-button-group">
+        <span class="game-on-label">Conner O/U 2.5</span>
+        <div class="split-button left-button">
+          <button class="half-button left-half">3.10</button>
+          <button class="half-button right-half">3.30</button>
+        </div>
+      </div>
+      <div class="split-button-group">
+        <span class="game-on-label">GG/NG</span>
+        <div class="split-button right-button">
+          <button class="half-button left-half">4.60</button>
+          <button class="half-button right-half">5.10</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Card 5: WOL vs SOU -->
+<div class="match-card">
+  <div class="team-info-container">
+    <div class="team-info">
+      <img src="Wolverhampton.png" alt="WOL Logo" class="team-logo">
+      <span class="team-name">WOL</span>
+    </div>
+    <span class="vs-text">-:-</span>
+    <div class="team-info">
+      <img src="Southampton.png" alt="SOU Logo" class="team-logo">
+      <span class="team-name">SOU</span>
+    </div>
+  </div>
+  <div class="predictions-label">Prediction</div>
+  <div class="button-container">
+    <div class="button-row">
+      <div class="split-button-group">
+        <span class="game-on-label">Home/Away</span>
+        <div class="split-button left-button">
+          <button class="half-button left-half">1.60</button>
+          <button class="half-button right-half">1.80</button>
+        </div>
+      </div>
+      <div class="split-button-group">
+        <span class="game-on-label">Card O/U 2.5</span>
+        <div class="split-button right-button">
+          <button class="half-button left-half">2.80</button>
+          <button class="half-button right-half">3.10</button>
+        </div>
+      </div>
+    </div>
+    <div class="button-row">
+      <div class="split-button-group">
+        <span class="game-on-label">Conner O/U 2.5</span>
+        <div class="split-button left-button">
+          <button class="half-button left-half">3.10</button>
+          <button class="half-button right-half">3.30</button>
+        </div>
+      </div>
+      <div class="split-button-group">
+        <span class="game-on-label">GG/NG</span>
+        <div class="split-button right-button">
+          <button class="half-button left-half">4.60</button>
+          <button class="half-button right-half">5.10</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="carousel-nav">
+  
+  </div>
+</div>
+
+<!-- Card 6: MANU vs LIV -->
+<div class="match-card">
+  <div class="team-info-container">
+    <div class="team-info">
+      <img src="Leicester.png" alt="MANU Logo" class="team-logo">
+      <span class="team-name">LIE</span>
+    </div>
+    <span class="vs-text">-:-</span>
+    <div class="team-info">
+      <img src="Aston.png" alt="LIV Logo" class="team-logo">
+      <span class="team-name">AST</span>
+    </div>
+  </div>
+  <div class="predictions-label">Prediction</div>
+  <div class="button-container">
+    <div class="button-row">
+      <div class="split-button-group">
+        <span class="game-on-label">Home/Away</span>
+        <div class="split-button left-button">
+          <button class="half-button left-half">1.60</button>
+          <button class="half-button right-half">1.80</button>
+        </div>
+      </div>
+      <div class="split-button-group">
+        <span class="game-on-label">Card O/U 2.5</span>
+        <div class="split-button right-button">
+          <button class="half-button left-half">2.80</button>
+          <button class="half-button right-half">3.10</button>
+        </div>
+      </div>
+    </div>
+    <div class="button-row">
+      <div class="split-button-group">
+        <span class="game-on-label">Conner O/U 2.5</span>
+        <div class="split-button left-button">
+          <button class="half-button left-half">3.10</button>
+          <button class="half-button right-half">3.30</button>
+        </div>
+      </div>
+      <div class="split-button-group">
+        <span class="game-on-label">GG/NG</span>
+        <div class="split-button right-button">
+          <button class="half-button left-half">4.60</button>
+          <button class="half-button right-half">5.10</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><!-- Card 6: MANU vs LIV -->
+<div class="match-card">
+  <div class="team-info-container">
+    <div class="team-info">
+      <img src="Leicester.png" alt="MANU Logo" class="team-logo">
+      <span class="team-name">LIE</span>
+    </div>
+    <span class="vs-text">-:-</span>
+    <div class="team-info">
+      <img src="Aston.png" alt="LIV Logo" class="team-logo">
+      <span class="team-name">AST</span>
+    </div>
+  </div>
+  <div class="predictions-label">Prediction</div>
+  <div class="button-container">
+    <div class="button-row">
+      <div class="split-button-group">
+        <span class="game-on-label">Home/Away</span>
+        <div class="split-button left-button">
+          <button class="half-button left-half">1.60</button>
+          <button class="half-button right-half">1.80</button>
+        </div>
+      </div>
+      <div class="split-button-group">
+        <span class="game-on-label">Card O/U 2.5</span>
+        <div class="split-button right-button">
+          <button class="half-button left-half">2.80</button>
+          <button class="half-button right-half">3.10</button>
+        </div>
+      </div>
+    </div>
+    <div class="button-row">
+      <div class="split-button-group">
+        <span class="game-on-label">Conner O/U 2.5</span>
+        <div class="split-button left-button">
+          <button class="half-button left-half">3.10</button>
+          <button class="half-button right-half">3.30</button>
+        </div>
+      </div>
+      <div class="split-button-group">
+        <span class="game-on-label">GG/NG</span>
+        <div class="split-button right-button">
+          <button class="half-button left-half">4.60</button>
+          <button class="half-button right-half">5.10</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><!-- Card 6: MANU vs LIV -->
+<div class="match-card">
+  <div class="team-info-container">
+    <div class="team-info">
+      <img src="Leicester.png" alt="MANU Logo" class="team-logo">
+      <span class="team-name">LIE</span>
+    </div>
+    <span class="vs-text">-:-</span>
+    <div class="team-info">
+      <img src="Aston.png" alt="LIV Logo" class="team-logo">
+      <span class="team-name">AST</span>
+    </div>
+  </div>
+  <div class="predictions-label">Prediction</div>
+  <div class="button-container">
+    <div class="button-row">
+      <div class="split-button-group">
+        <span class="game-on-label">Home/Away</span>
+        <div class="split-button left-button">
+          <button class="half-button left-half">1.60</button>
+          <button class="half-button right-half">1.80</button>
+        </div>
+      </div>
+      <div class="split-button-group">
+        <span class="game-on-label">Card O/U 2.5</span>
+        <div class="split-button right-button">
+          <button class="half-button left-half">2.80</button>
+          <button class="half-button right-half">3.10</button>
+        </div>
+      </div>
+    </div>
+    <div class="button-row">
+      <div class="split-button-group">
+        <span class="game-on-label">Conner O/U 2.5</span>
+        <div class="split-button left-button">
+          <button class="half-button left-half">3.10</button>
+          <button class="half-button right-half">3.30</button>
+        </div>
+      </div>
+      <div class="split-button-group">
+        <span class="game-on-label">GG/NG</span>
+        <div class="split-button right-button">
+          <button class="half-button left-half">4.60</button>
+          <button class="half-button right-half">5.10</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Card 6: MANU vs LIV -->
+<div class="match-card">
+  <div class="team-info-container">
+    <div class="team-info">
+      <img src="Leicester.png" alt="MANU Logo" class="team-logo">
+      <span class="team-name">LIE</span>
+    </div>
+    <span class="vs-text">-:-</span>
+    <div class="team-info">
+      <img src="Aston.png" alt="LIV Logo" class="team-logo">
+      <span class="team-name">AST</span>
+    </div>
+  </div>
+  <div class="predictions-label">Prediction</div>
+  <div class="button-container">
+    <div class="button-row">
+      <div class="split-button-group">
+        <span class="game-on-label">Home/Away</span>
+        <div class="split-button left-button">
+          <button class="half-button left-half">1.60</button>
+          <button class="half-button right-half">1.80</button>
+        </div>
+      </div>
+      <div class="split-button-group">
+        <span class="game-on-label">Card O/U 2.5</span>
+        <div class="split-button right-button">
+          <button class="half-button left-half">2.80</button>
+          <button class="half-button right-half">3.10</button>
+        </div>
+      </div>
+    </div>
+    <div class="button-row">
+      <div class="split-button-group">
+        <span class="game-on-label">Conner O/U 2.5</span>
+        <div class="split-button left-button">
+          <button class="half-button left-half">3.10</button>
+          <button class="half-button right-half">3.30</button>
+        </div>
+      </div>
+      <div class="split-button-group">
+        <span class="game-on-label">GG/NG</span>
+        <div class="split-button right-button">
+          <button class="half-button left-half">4.60</button>
+          <button class="half-button right-half">5.10</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Card 6: MANU vs LIV -->
+<div class="match-card">
+  <div class="team-info-container">
+    <div class="team-info">
+      <img src="Leicester.png" alt="MANU Logo" class="team-logo">
+      <span class="team-name">LIE</span>
+    </div>
+    <span class="vs-text">-:-</span>
+    <div class="team-info">
+      <img src="Aston.png" alt="LIV Logo" class="team-logo">
+      <span class="team-name">AST</span>
+    </div>
+  </div>
+  <div class="predictions-label">Prediction</div>
+  <div class="button-container">
+    <div class="button-row">
+      <div class="split-button-group">
+        <span class="game-on-label">Home/Away</span>
+        <div class="split-button left-button">
+          <button class="half-button left-half">1.60</button>
+          <button class="half-button right-half">1.80</button>
+        </div>
+      </div>
+      <div class="split-button-group">
+        <span class="game-on-label">Card O/U 2.5</span>
+        <div class="split-button right-button">
+          <button class="half-button left-half">2.80</button>
+          <button class="half-button right-half">3.10</button>
+        </div>
+      </div>
+    </div>
+    <div class="button-row">
+      <div class="split-button-group">
+        <span class="game-on-label">Conner O/U 2.5</span>
+        <div class="split-button left-button">
+          <button class="half-button left-half">3.10</button>
+          <button class="half-button right-half">3.30</button>
+        </div>
+      </div>
+      <div class="split-button-group">
+        <span class="game-on-label">GG/NG</span>
+        <div class="split-button right-button">
+          <button class="half-button left-half">4.60</button>
+          <button class="half-button right-half">5.10</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Card 6: MANU vs LIV -->
+<div class="match-card">
+  <div class="team-info-container">
+    <div class="team-info">
+      <img src="Leicester.png" alt="MANU Logo" class="team-logo">
+      <span class="team-name">LIE</span>
+    </div>
+    <span class="vs-text">-:-</span>
+    <div class="team-info">
+      <img src="Aston.png" alt="LIV Logo" class="team-logo">
+      <span class="team-name">AST</span>
+    </div>
+  </div>
+  <div class="predictions-label">Prediction</div>
+  <div class="button-container">
+    <div class="button-row">
+      <div class="split-button-group">
+        <span class="game-on-label">Home/Away</span>
+        <div class="split-button left-button">
+          <button class="half-button left-half">1.60</button>
+          <button class="half-button right-half">1.80</button>
+        </div>
+      </div>
+      <div class="split-button-group">
+        <span class="game-on-label">Card O/U 2.5</span>
+        <div class="split-button right-button">
+          <button class="half-button left-half">2.80</button>
+          <button class="half-button right-half">3.10</button>
+        </div>
+      </div>
+    </div>
+    <div class="button-row">
+      <div class="split-button-group">
+        <span class="game-on-label">Conner O/U 2.5</span>
+        <div class="split-button left-button">
+          <button class="half-button left-half">3.10</button>
+          <button class="half-button right-half">3.30</button>
+        </div>
+      </div>
+      <div class="split-button-group">
+        <span class="game-on-label">GG/NG</span>
+        <div class="split-button right-button">
+          <button class="half-button left-half">4.60</button>
+          <button class="half-button right-half">5.10</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Card 6: MANU vs LIV -->
+<div class="match-card">
+  <div class="team-info-container">
+    <div class="team-info">
+      <img src="Leicester.png" alt="MANU Logo" class="team-logo">
+      <span class="team-name">LIE</span>
+    </div>
+    <span class="vs-text">-:-</span>
+    <div class="team-info">
+      <img src="Aston.png" alt="LIV Logo" class="team-logo">
+      <span class="team-name">AST</span>
+    </div>
+  </div>
+  <div class="predictions-label">Prediction</div>
+  <div class="button-container">
+    <div class="button-row">
+      <div class="split-button-group">
+        <span class="game-on-label">Home/Away</span>
+        <div class="split-button left-button">
+          <button class="half-button left-half">1.60</button>
+          <button class="half-button right-half">1.80</button>
+        </div>
+      </div>
+      <div class="split-button-group">
+        <span class="game-on-label">Card O/U 2.5</span>
+        <div class="split-button right-button">
+          <button class="half-button left-half">2.80</button>
+          <button class="half-button right-half">3.10</button>
+        </div>
+      </div>
+    </div>
+    <div class="button-row">
+      <div class="split-button-group">
+        <span class="game-on-label">Conner O/U 2.5</span>
+        <div class="split-button left-button">
+          <button class="half-button left-half">3.10</button>
+          <button class="half-button right-half">3.30</button>
+        </div>
+      </div>
+      <div class="split-button-group">
+        <span class="game-on-label">GG/NG</span>
+        <div class="split-button right-button">
+          <button class="half-button left-half">4.60</button>
+          <button class="half-button right-half">5.10</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="carousel-nav">
+          <button class="nav-button prev">&#8249;</button>
+          <button class="nav-button next">&#8250;</button>
+      
+          </div>
+        </footer>
+        </div>
+        <style>
+        </style>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+  </section>
+</body>
+</html>
+
+
+
